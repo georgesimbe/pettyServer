@@ -5,7 +5,9 @@ const app = express()
 const logger = require('./middlewares/logger')
 var cors = require('cors');
 
-app.use(cors())
+app.use(cors({
+  origin: '*'
+}));
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
