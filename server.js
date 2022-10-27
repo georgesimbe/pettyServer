@@ -1,8 +1,8 @@
+require('dotenv').config()
 const axios = require('axios');
 const express = require('express')
 const app = express()
 const PORT = process.env.PORT || 3004;
-require('dotenv').config()
 const logger = require('./middlewares/logger')
 var cors = require('cors');
 
