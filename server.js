@@ -2,7 +2,6 @@
 const axios = require('axios');
 const express = require('express')
 const app = express()
-const PORT = process.env.PORT || 3004;
 const logger = require('./middlewares/logger')
 var cors = require('cors');
 
@@ -12,9 +11,9 @@ app.use((req, res, next) => {
   next();
 });
 
-app.listen(3004, function () {
-  console.log(`Server is listening on port ${process.env.PORT}`)
-})
+app.listen(process.env.PORT || 3001, '0.0.0.0', () => {
+  console.log("Server is running.");
+});
 
 app.use(logger)
 
